@@ -41,3 +41,7 @@
 .space {
     min-width: 30px;
 }
+
+#add-train-button {
+    font-weight: bold;
+}

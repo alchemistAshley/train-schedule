@@ -7,13 +7,17 @@
         <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed|Patrick+Hand" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     </head>
 
     <body>
         <ul class="header">
             <li class="header">All Aboard!</li>
         </ul>
-        <div class="container">
+
+        <div class="container" id="train-banner">
             <img class="illustration" src="assets/images/train2.jpg" alt="train illustration"/>
             <img class="illustration" src="assets/images/train9.png" alt="train illustration"/>
             <img class="illustration" src="assets/images/train7.jpg" alt="train illustration"/>
@@ -23,12 +27,12 @@
 
         
         <div class="container">
-            <div class="card mb-3" style="width: 68rem;">
+            <div class="card border-dark mb-3" style="width: 68rem;">
                 <div class="card-header bg-dark">
                     Current Train Schedule
                 </div>
                 <div class="group-form"></div>
-                    <table class="table">
+                    <table class="table table-hover">
                         <thead class="thead-light">
                             <tr>
                             <th scope="col" >#</th>
@@ -55,47 +59,41 @@
         </div>
 
         <div class="container">
-            <div class="card bg-dark mb-3" style="width: 68rem;">
-                <div class="card-header">
+            <div class="card border-dark mb-1" style="width: 68rem;">
+                <div class="card-header  bg-dark">
                     Add Train
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                        <div class="form-group">
-                            <label for="trainName">Name of Train:</label>
-                            <input type="text" class="form-control" id="trainName" aria-describedby="trainName">
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="form-group">
-                            <label for="destination">Enter the Destination:</label>
-                            <input type="text" class="form-control" id="destination" aria-describedby="destination">
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="form-group">
+                    <div class="container m-1 mt-3" >
+                        <label for="trainName">Name of Train:</label>
+                        <input type="text" class="form-control" id="trainName" aria-describedby="trainName">
+                    </div>
+                    <div class="container m-2">
+                        <label for="destination">Enter the Destination:</label>
+                        <input type="text" class="form-control" id="destination" aria-describedby="destination">
+                    </div>
+                    <div class="container m-2">
                             <label for="firstTime">At what time does the first train leave?</label>
                             <input type="text" class="form-control" id="firstTime" aria-describedby="firstTime">
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="form-group">
-                            <label for="frequency">How often does the train visit the station?</label>
-                            <input type="text" class="form-control" id="frequency" aria-describedby="frequency">
-                        </div>
-                    </li>
-                </ul> 
+                    </div>
+                    <div class="container m-2">
+                        <label for="frequency">How often does the train visit the station?</label>
+                        <input type="text" class="form-control" id="frequency" aria-describedby="frequency">
+                    </div>
+                    <div class="container m-2 mt-3 mb-3">
+                        <button id="add-train-button" type="button" class="btn btn-dark">Submit</button>
+                    </div>
+                    
             </div>
         </div>
 
-        <div class="container">
+        <div class="container" id="train-bottom-banner">
             <img class="illustration" src="assets/images/train4.jpg" alt="train illustrain"/>
             <img class="illustration" src="assets/images/train3.jpg" alt="train illustration"/>
             <img class="illustration" src="assets/images/train10.jpg" alt="train illustration"/>
             <img class="illustration" src="assets/images/train1.jpg" alt="train illustration"/>
             <img class="illustration" src="assets/images/train.jpg" alt="train illustration"/>
         </div>
-    
     
     </body>
 </html>
