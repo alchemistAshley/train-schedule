@@ -1,0 +1,43 @@
+.header {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    background: #212529;
+}
+
+.header {
+    display: block;
+    font-family: 'Patrick Hand', cursive;
+    color: white;
+    font-size: 48px;
+    text-align: center;
+    padding: 8px 8px;
+    text-decoration: none;  
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.illustration {
+    display: inline-block;
+    margin-left: 0px;
+    margin-right: 0px;   
+    max-width: 210px;        
+}
+
+.card {
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+.card-header {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.space {
+    min-width: 30px;
+}
