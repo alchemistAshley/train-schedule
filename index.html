@@ -7,7 +7,8 @@
         <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed|Patrick+Hand" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    
+       
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
         <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
         <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     </head>
@@ -32,25 +33,23 @@
                     Current Train Schedule
                 </div>
                 <div class="group-form"></div>
-                    <table class="table table-hover">
+                    <table class="table table-hover" id= "train-table">
                         <thead class="thead-light">
                             <tr>
-                            <th scope="col" >#</th>
                             <th scope="col">Train Name:</th>
                             <th scope="col">Destination:</th>
-                            <th scope="col">Frequency:</th>
                             <th scope="col">Next Arrival Time:</th>
                             <th scope="col">Minutes Away:</th>
+                            <th scope="col">Frequency:</th>
                             </tr>
                         </thead>
                         <tbody  style="width: 68rem;">
                             <tr>
-                            <th scope="row">1</th>
                             <td>Hogwarts Express</td>
                             <td>Hogwarts School of Wizardy</td>
-                            <td>600</td>
                             <td>5:00 pm</td>
                             <td>320</td>
+                            <td>600</td>
                             </tr>
                         </tbody>
                     </table>
@@ -74,16 +73,16 @@
                     </div>
                     <div class="container m-2">
                             <label for="firstTime">At what time does the first train leave?</label>
-                            <input type="text" class="form-control" id="firstTime" aria-describedby="firstTime">
+                            <input type="text" class="form-control" id="firstTrain" aria-describedby="firstTime">
                     </div>
                     <div class="container m-2">
-                        <label for="frequency">How often does the train visit the station?</label>
+                        <label for="frequency">How often (in minutes) does the train visit the station?</label>
                         <input type="text" class="form-control" id="frequency" aria-describedby="frequency">
                     </div>
                     <div class="container m-2 mt-3 mb-3">
                         <button id="add-train-button" type="button" class="btn btn-dark">Submit</button>
                     </div>
-                    
+                </ul>
             </div>
         </div>
 
@@ -95,5 +94,6 @@
             <img class="illustration" src="assets/images/train.jpg" alt="train illustration"/>
         </div>
     
+    <script src="assets/javascript/script.js"></script>    
     </body>
 </html>
