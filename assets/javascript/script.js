@@ -56,12 +56,35 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey){
     console.log(firstTrain);
     console.log(frequency);
 
-    var firstTrainPretty = moment(firstTrain).format("hh:mm a");
-    console.log(firstTrainPretty);
+    var now = parseFloat(moment().format("X"));
+    console.log("Now: " + now);
 
-    var nextTrain = 
-    // calculate what time the train started and dispaly when the next train will arrive
-    // calculate how many minutes until the next train arrives and display
+    var trainTimeYest = firstTrain + " " + moment().add(-1, 'days').format("MM/DD/YYYY");
+    console.log("Train Time Yest: " + trainTimeYest);
+
+    var convertedTime = parseFloat(moment(firstTrain, "HH:mm MM/DD/YYYY").format("X"));
+    console.log("Converted Time: " + convertedTime);
+
+    var convertedFreq = parseFloat(frequency) * 60; 
+    console.log("Converted Freq: " + convertedFreq);
+    
+    var nextTrain = Math.ceil((now-convertedTime)/convertedFreq);
+    console.log("Next Train: " + nextTrain);
+   
+    var arrivalTimeUnix = convertedTime + (convertedFreq * nextTrain);
+    console.log("Arrival Time Unix: " + arrivalTimeUnix);
+
+    var arrivalTime = moment(arrivalTimeUnix, "X").format("HH:mm");
+
+    var minsAway = Math.round((arrivalTimeUnix - now) / 60); 
+
+    console.log("Arrival Time: " + arrivalTime);
+    console.log("Mins Away: " + minsAway);
+
+
+    // append data into the table
+    $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" 
+    + arrivalTime + "</td><td>" + minsAway + " mins" + "</td><td>" + frequency  + " mins" + "</td></tr>");
     
 
 }), function(errorObject) {
